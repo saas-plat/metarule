@@ -1,0 +1,22 @@
+{
+  "presets": [
+    [
+      "@babel/env", {
+        "targets": {
+          "browsers": ["last 2 Chrome versions", "IE >= 9"]
+        }
+      }
+    ],
+    "@babel/react"
+  ],
+  "plugins": [
+    ["@babel/proposal-decorators", {
+      "legacy": true
+    }],
+    ["@babel/proposal-class-properties", {
+      "loose": true
+    }],
+    "@babel/transform-runtime",
+    "@babel/proposal-export-default-from"
+  ]
+}

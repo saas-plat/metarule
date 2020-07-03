@@ -1,0 +1,31 @@
+{
+    "plugins": ["react"],
+    "extends": ["eslint:recommended", "plugin:react/recommended"],
+    "parser": "babel-eslint",
+    "env": {
+      "browser": true,
+      "node": true,
+      "commonjs": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 7,
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "globals": {
+      "Promise": true,
+      "expect": true,
+      "describe": true,
+      "before": true,
+      "after": true,
+      "it": true,
+      "Symbol": true,
+      "Proxy": true,
+      "test": true
+    },
+    "rules":{
+      "react/display-name": "off",
+      "no-console": "off"
+    }
+}

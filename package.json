@@ -1,0 +1,52 @@
+{
+  "name": "@saas-plat/metarule",
+  "version": "1.0.0",
+  "description": "提供业务逻辑的定义和解析执行",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "rm -rf dist && babel src --out-dir lib --source-maps",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
+    "test": "cross-env NODE_ENV=test mocha",
+    "watch": "cross-env NODE_ENV=test DEBUG=saas-plat*,-not_this mocha --watch",
+    "test_d": "cross-env NODE_ENV=test DEBUG=saas-plat*-not_this mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saas-plat/metarule.git"
+  },
+  "keywords": [
+    "meta",
+    "rule"
+  ],
+  "author": "saas-plat.com",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/saas-plat/metarule/issues"
+  },
+  "homepage": "https://github.com/saas-plat/metarule#readme",
+  "dependencies": {
+    "nools": "^0.4.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-decorators": "^7.8.3",
+    "@babel/plugin-proposal-export-default-from": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.9.4",
+    "@babel/register": "^7.9.0",
+    "@babel/runtime": "^7.9.2",
+    "babel-eslint": "^8.0.3",
+    "chai": "^4.2.0",
+    "cross-env": "^6.0.3",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.17.0",
+    "conventional-changelog-cli": "^2.0.34",
+    "mocha": "^7.1.1"
+  }
+}
