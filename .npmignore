@@ -31,5 +31,4 @@ output/
 output.tar.gz
 
 test/
-.*
-src
+.* 

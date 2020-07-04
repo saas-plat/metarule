@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "提供业务逻辑的定义和解析执行",
   "main": "lib/index.js",
+  "browser": "dist/index.js",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
-    "build": "rm -rf dist && babel src --out-dir lib --source-maps",
+    "build": "rm -rf dist && babel src --out-dir dist --source-maps",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
     "test": "cross-env NODE_ENV=test mocha",
     "watch": "cross-env NODE_ENV=test DEBUG=saas-plat*,-not_this mocha --watch",
