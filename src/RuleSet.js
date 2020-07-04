@@ -56,7 +56,9 @@ const parseAction = (action, identifiers, defined, scope) => {
   }
   action = declares.join("") + action;
   try {
-    return new Function("defined, scope", "return " + new Function(params.join(","), action).toString())(defined, scope);
+    return new Function("defined, scope",
+      "return " + new Function(params.join(","), action).toString()
+    )(defined, scope);
   } catch (e) {
     throw new Error("Invalid action : " + action + "\n" + e.message);
   }

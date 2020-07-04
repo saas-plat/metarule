@@ -16,7 +16,7 @@
     ["@babel/proposal-class-properties", {
       "loose": true
     }],
-    "@babel/transform-runtime",
+    //"@babel/transform-runtime",
     "@babel/proposal-export-default-from"
   ]
 }
