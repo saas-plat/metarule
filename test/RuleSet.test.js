@@ -1,4 +1,4 @@
-const RuleSet = require('../src/RuleSet');
+const RuleSet = require('../lib/RuleSet');
 
 describe('数据查询基础服务', () => {
 
