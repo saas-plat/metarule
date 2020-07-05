@@ -31,6 +31,9 @@
   "dependencies": {
     "nools": "^0.4.4"
   },
+  "peerDependencies": {
+    "i18next": ">=19.0.0"
+  },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.0",
@@ -44,10 +47,11 @@
     "@babel/runtime": "^7.9.2",
     "babel-eslint": "^8.0.3",
     "chai": "^4.2.0",
+    "conventional-changelog-cli": "^2.0.34",
     "cross-env": "^6.0.3",
     "eslint": "^6.8.0",
     "eslint-plugin-react": "^7.17.0",
-    "conventional-changelog-cli": "^2.0.34",
+    "i18next": "^19.5.4",
     "mocha": "^7.1.1"
   }
 }

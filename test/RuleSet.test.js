@@ -1,4 +1,5 @@
 const RuleSet = require('../lib/RuleSet');
+require('i18next').init();
 
 describe('规则引擎', () => {
 
@@ -33,7 +34,7 @@ describe('规则引擎', () => {
         [Table, "t"]
       ],
       "then": [
-        `console.log(facts)`,
+        `console.log(facts)1`,
         `if (!t.Name){
             throw new Error('!Name', t.Name)
           }else{
