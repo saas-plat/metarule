@@ -34,7 +34,7 @@ describe('规则引擎', () => {
         [Table, "t"]
       ],
       "then": [
-        `console.log(facts)1`,
+        `console.log(facts)`,
         `if (!t.Name){
             throw new Error('!Name', t.Name)
           }else{
