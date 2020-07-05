@@ -8,7 +8,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "build": "rm -rf dist && babel src --out-dir dist --source-maps",
+    "build": "rm -rf dist && babel lib --out-dir dist --source-maps",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
     "test": "cross-env NODE_ENV=test mocha",
     "test_w": "cross-env NODE_ENV=test DEBUG=saas-plat*,-not_this mocha --watch",
