@@ -1,6 +1,6 @@
 const RuleSet = require('../lib/RuleSet');
 
-describe('数据查询基础服务', () => {
+describe('规则引擎', () => {
 
   class Table {
     constructor(Name) {
@@ -14,7 +14,7 @@ describe('数据查询基础服务', () => {
     }
   }
 
-  it('接收业务对象(简单对象、层级关系对象、带分类列表对象、复合对象)事件生成数据对象，可以查询数据', async () => {
+  it('定义一个规则', async () => {
     const ruleset = new RuleSet('ruleset1', [{
       "name": "xxxx",
       "when": [
@@ -29,8 +29,8 @@ describe('数据查询基础服务', () => {
     }, {
       "name": "validating",
       "when": [
-        ["Action", "a", "a.name === 'validating'"],
-        ["Table", "t"]
+        ["Action", "a", facts => facts.a.name === 'validating'],   // 支持直接js定义
+        [Table, "t"]
       ],
       "then": [
         `console.log(facts)`,
