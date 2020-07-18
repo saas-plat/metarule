@@ -29,10 +29,10 @@
   },
   "homepage": "https://github.com/saas-plat/metarule#readme",
   "dependencies": {
-    "@saas-plat/metaschema": "^1.0.12",
     "nools": "^0.4.4"
   },
   "peerDependencies": {
+    "@saas-plat/metaschema": "^1.0.12",
     "i18next": ">=19.0.0"
   },
   "devDependencies": {
