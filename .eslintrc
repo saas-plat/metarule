@@ -1,6 +1,5 @@
-{
-    "plugins": ["react"],
-    "extends": ["eslint:recommended", "plugin:react/recommended"],
+{ 
+    "extends": ["eslint:recommended" ],
     "parser": "babel-eslint",
     "env": {
       "browser": true,
@@ -25,7 +24,6 @@
       "test": true
     },
     "rules":{
-      "react/display-name": "off",
       "no-console": "off"
     }
 }

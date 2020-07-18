@@ -1,4 +1,4 @@
-const RuleSet = require('../lib/RuleSet');
+const {RuleSet} = require('../lib');
 require('i18next').init();
 
 describe('规则引擎', () => {
