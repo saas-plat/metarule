@@ -1,4 +1,6 @@
-const {RuleSet} = require('../lib');
+const {
+  RuleSet
+} = require('../lib');
 require('i18next').init();
 
 describe('规则引擎', () => {
@@ -10,8 +12,11 @@ describe('规则引擎', () => {
   }
 
   class Action {
-    constructor(name) {
+    constructor(name, other = {}) {
       this.name = name;
+      Object.keys(other).forEach(key => {
+        this[key] = other[key]
+      })
     }
   }
 
@@ -30,7 +35,7 @@ describe('规则引擎', () => {
     }, {
       "name": "validating",
       "when": [
-        ["Action", "a", facts => facts.a.name === 'validating'],   // 支持直接js定义
+        ["Action", "a", facts => facts.a.name === 'validating'], // 支持直接js定义
         [Table, "t"]
       ],
       "then": [
@@ -48,4 +53,37 @@ describe('规则引擎', () => {
 
     await ruleset.execute([new Table('bbbb'), new Action('validating')])
   })
+
+  it('升级条件函数versionAt和seriesIn', async () => {
+    const ruleset = new RuleSet('ruleset1', [{
+      name: 'update_sciprt3',
+      when: [
+        [
+         'Action',  'e',
+          `  e.name == 'Department.migrate' && e.event == 'saved' &&
+          versionAt(e, '3.0.0') && seriesIn(e, 'industry2')`
+        ]
+      ],
+      then: [
+        `e.data.Name2 = e.data.Name + 'xxxxx'`,
+        `console.log('e.data.Name2 =', e.data.Name2) `
+      ]
+    }], { 
+      Action
+    })
+
+    await ruleset.execute([
+      new Action('Department.migrate', {
+        event: 'saved',
+        from: '1.0.0',
+        to: '2.0.0',
+        series: 'industry2',
+        data: {
+          Name: 'aaa'
+        }
+      })
+    ])
+
+  })
+
 })
