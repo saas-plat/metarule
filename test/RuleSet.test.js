@@ -68,7 +68,7 @@ describe('规则引擎', () => {
         `e.data.Name2 = e.data.Name + 'xxxxx'`,
         `console.log('e.data.Name2 =', e.data.Name2) `
       ]
-    }], { 
+    }], {
       Action
     })
 
