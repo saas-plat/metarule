@@ -1,6 +1,6 @@
 {
   "name": "@saas-plat/metarule",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "提供业务逻辑的定义和解析执行",
   "main": "lib/index.js",
   "browser": "dist/index.js",
