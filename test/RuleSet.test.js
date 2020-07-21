@@ -1,6 +1,7 @@
 const {
   RuleSet
 } = require('../lib');
+const metaschema = require('@saas-plat/metaschema');
 require('i18next').init();
 
 describe('规则引擎', () => {
@@ -54,12 +55,27 @@ describe('规则引擎', () => {
     await ruleset.execute([new Table('bbbb'), new Action('validating')])
   })
 
+  it('Model类型的解析支持', async () => {
+     new RuleSet('ruleset1', [{
+      name: 'update_sciprt3',
+      when: [
+        [metaschema.Action, 'e', e => e.name == 'Department.migrate' && e.event == 'saved']
+      ],
+      then: [
+        `console.log('update to 2.0.0');`
+      ]
+    }], {
+      Action
+    })
+
+  })
+
   it('升级条件函数versionAt和seriesIn', async () => {
     const ruleset = new RuleSet('ruleset1', [{
       name: 'update_sciprt3',
       when: [
         [
-         'Action',  'e',
+          'Action', 'e',
           `  e.name == 'Department.migrate' && e.event == 'saved' &&
           versionAt(e, '3.0.0') && seriesIn(e, 'industry2')`
         ]
